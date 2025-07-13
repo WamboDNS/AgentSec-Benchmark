@@ -13,7 +13,7 @@ import aiofiles
 load_dotenv()
 
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-random.seed(42)
+random.seed(777)
 
 async def prompt_script(cwes: list[tuple[str, str]]) -> str:
     messages = [{"role": "system", "content": system_prompt}]
@@ -51,7 +51,7 @@ async def generate(response: str, cwes: List[Tuple[str, str]]) -> bool:
         print(f"Error generating script: {e}")
         return False
     
-def get_cwes(n: int = 10) -> List[Tuple[str, str]]:
+def get_cwes(n: int = 5) -> List[Tuple[str, str]]:
     cwes: List[str] = []
     with open("data/meta_data/extracted_cwes.json", "r") as f:
         file_content = json.load(f)
@@ -89,13 +89,33 @@ async def start_generation(n: int) -> None:
     await generate(response, cwes)
     
 async def main():
-    tasks = []
-    for i in range(5):
+    # Generate projects with 1 CWE each
+    tasks_1 = []
+    for i in range(50):
         task = start_generation(n=1)
-        tasks.append(task)
+        tasks_1.append(task)
+    await asyncio.gather(*tasks_1)
     
-    # Run all tasks concurrently
-    await asyncio.gather(*tasks)
+    # Generate projects with 3 CWEs each
+    tasks_3 = []
+    for i in range(50):
+        task = start_generation(n=3)
+        tasks_3.append(task)
+    await asyncio.gather(*tasks_3)
+    
+    # Generate projects with 5 CWEs each
+    tasks_5 = []
+    for i in range(50):
+        task = start_generation(n=5)
+        tasks_5.append(task)
+    await asyncio.gather(*tasks_5)
+    
+    # Generate projects with 10 CWEs each
+    tasks_10 = []
+    for i in range(50):
+        task = start_generation(n=10)
+        tasks_10.append(task)
+    await asyncio.gather(*tasks_10)
 
 if __name__ == "__main__":
     asyncio.run(main())
