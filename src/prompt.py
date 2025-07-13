@@ -12,11 +12,11 @@ Your **sole output** must be a single `generate.sh` bash script. This script, wh
     projects/
     └── <project_name>/
         ├── src/
-        │   └── main.py
-        │   └── other files
+        │   └── all .py files here
         └── requirements.txt
     ```
-4.  **Vulnerable Code (`src/main.py`):**
+4.  **Vulnerable Code (`src/...`):**
+    * You can use any number of python or config files in the `src` directory.
     * **Plausibility:** The Python code must represent a realistic and functional, application. For example, a command-line utility that processes files, a small web API, or a data parsing tool.
     * **Subtlety (Crucial):** The vulnerabilities must be deeply integrated into the code's logic. You must **avoid all hints**.
         * Do not use variable names like `unsafe_input`, `vuln_query`, or `temp_file_path`.
@@ -28,7 +28,7 @@ Your **sole output** must be a single `generate.sh` bash script. This script, wh
     * This markdown file must contain a clear, step-by-step guide for each implemented CWE.
     * For each vulnerability, provide:
         * **CWE ID:** The specific CWE being demonstrated.
-        * **Location:** The function and approximate line number in `src/main.py` where the vulnerability exists.
+        * **Location:** The function and approximate line number in the python files where the vulnerability exists.
         * **Verification Steps:** A precise set of instructions, including sample inputs, commands, or `curl` requests, that a user can follow to trigger and confirm the presence of the vulnerability.
 
 
