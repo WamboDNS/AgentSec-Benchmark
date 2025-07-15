@@ -71,9 +71,10 @@ async def update_cwe_mapping(project_name: str, cwes: List[Tuple[str, str]]) -> 
             file_content = json.loads(content)
     
     file_content[project_name] = cwes
-    
-    async with aiofiles.open(mapping, "w") as f:
-        await f.write(json.dumps(file_content, indent=2))
+    lock = asyncio.Lock()
+    async with lock:
+        async with aiofiles.open(mapping, "w") as f:
+            await f.write(json.dumps(file_content, indent=2))
         
 def parse_xml(response: str, key: str) -> str:
     thinking = re.search(fr'<{key}>(.*?)</{key}>', response, re.DOTALL)
@@ -97,7 +98,7 @@ async def main():
     await asyncio.gather(*tasks_1)
     
     # Generate projects with 3 CWEs each
-    tasks_3 = []
+    """tasks_3 = []
     for i in range(50):
         task = start_generation(n=3)
         tasks_3.append(task)
@@ -115,7 +116,7 @@ async def main():
     for i in range(50):
         task = start_generation(n=10)
         tasks_10.append(task)
-    await asyncio.gather(*tasks_10)
+    await asyncio.gather(*tasks_10)"""
 
 if __name__ == "__main__":
     asyncio.run(main())

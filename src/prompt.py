@@ -5,7 +5,7 @@ Your **sole output** must be a single `generate.sh` bash script. This script, wh
 
 **Project Requirements:**
 
-1.  **Input:** You will be given a list of Tuples (CWE ID, CWE Description). YOU select the project name.
+1.  **Input:** You will be given a list of Tuples (CWE ID, CWE Description). YOU select the project name. The name should NEVER give a hint about the CWE or any insecurities.
 2.  **Primary Output:** A single `generate.sh` bash script. No other explanatory text should be provided.
 3.  **Project Structure:** The `generate.sh` script must create the following directory structure:
     ```
