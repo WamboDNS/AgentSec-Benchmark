@@ -1,3 +1,266 @@
 {
-    
+  "dataviewer": [
+    [
+      "CWE-1321",
+      "The product receives input from an upstream component that specifies attributes that are to be initialized or updated in an object, but it does not properly control modifications of attributes of the object prototype."
+    ]
+  ],
+  "filepassmgr": [
+    [
+      "CWE-316",
+      "The product stores sensitive information in cleartext in memory."
+    ]
+  ],
+  "DocGenie": [
+    [
+      "CWE-316",
+      "The product stores sensitive information in cleartext in memory."
+    ]
+  ],
+  "QuickListProc": [
+    [
+      "CWE-238",
+      "The product does not handle or incorrectly handles when a particular structural element is not completely specified."
+    ]
+  ],
+  "TrackTasker": [
+    [
+      "CWE-1422",
+      "A processor event or prediction may allow incorrect or stale data to be forwarded to transient operations, potentially exposing data over a covert channel."
+    ]
+  ],
+  "datacounter": [
+    [
+      "CWE-761",
+      "The product calls free() on a pointer to a memory resource that was allocated on the heap, but the pointer is not at the start of the buffer."
+    ]
+  ],
+  "NoteStore": [
+    [
+      "CWE-413",
+      "The product does not lock or does not correctly lock a resource when the product must have exclusive access to the resource."
+    ]
+  ],
+  "FileOrganizer": [
+    [
+      "CWE-64",
+      "The product, when opening a file or directory, does not sufficiently handle when the file is a Windows shortcut (.LNK) whose target is outside of the intended control sphere. This could allow an attacker to cause the product to operate on unauthorized files."
+    ]
+  ],
+  "Datapackager": [
+    [
+      "CWE-1066",
+      "The product contains a serializable data element that does not have an associated serialization method."
+    ]
+  ],
+  "NoteManager": [
+    [
+      "CWE-916",
+      "The product generates a hash for a password, but it uses a scheme that does not provide a sufficient level of computational effort that would make password cracking attacks infeasible or expensive."
+    ]
+  ],
+  "DocumentTagger": [
+    [
+      "CWE-316",
+      "The product stores sensitive information in cleartext in memory."
+    ]
+  ],
+  "TeamDirectory": [
+    [
+      "CWE-90",
+      "The product constructs all or part of an LDAP query using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended LDAP query when it is sent to a downstream component."
+    ]
+  ],
+  "DataTranscoder": [
+    [
+      "CWE-550",
+      "Certain conditions, such as network failure, will cause a server error message to be displayed."
+    ]
+  ],
+  "NetAddrBook": [
+    [
+      "CWE-501",
+      "The product mixes trusted and untrusted data in the same data structure or structured message."
+    ]
+  ],
+  "SimpleReportHub": [
+    [
+      "CWE-424",
+      "The product does not sufficiently protect all possible paths that a user can take to access restricted functionality or resources."
+    ]
+  ],
+  "FileArchive": [
+    [
+      "CWE-26",
+      "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize \"/dir/../filename\" sequences that can resolve to a location that is outside of that directory."
+    ]
+  ],
+  "FileIndexManager": [
+    [
+      "CWE-480",
+      "The product accidentally uses the wrong operator, which changes the logic in security-relevant ways."
+    ]
+  ],
+  "DataYielder": [
+    [
+      "CWE-154",
+      "The product receives input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could be interpreted as variable name delimiters when they are sent to a downstream component."
+    ]
+  ],
+  "datapad": [
+    [
+      "CWE-806",
+      "The product uses the size of a source buffer when reading from or writing to a destination buffer, which may cause it to access memory that is outside of the bounds of the buffer."
+    ]
+  ],
+  "DataStreamProcessor": [
+    [
+      "CWE-1190",
+      "The product enables a Direct Memory Access (DMA) capable device before the security configuration settings are established, which allows an attacker to extract data from or gain privileges on the product."
+    ]
+  ],
+  "FileTransferAgent": [
+    [
+      "CWE-923",
+      "The product establishes a communication channel to (or from) an endpoint for privileged or protected operations, but it does not properly ensure that it is communicating with the correct endpoint."
+    ]
+  ],
+  "DataStatsCLI": [
+    [
+      "CWE-1176",
+      "The product performs CPU computations using algorithms that are not as efficient as they could be for the needs of the developer, i.e., the computations can be optimized further."
+    ]
+  ],
+  "taskpad": [
+    [
+      "CWE-575",
+      "The product violates the Enterprise JavaBeans (EJB) specification by using AWT/Swing."
+    ]
+  ],
+  "TextScriptor": [
+    [
+      "CWE-1101",
+      "The product uses automatically-generated code that cannot be executed without a specific runtime support component."
+    ]
+  ],
+  "dataprocmanager": [
+    [
+      "CWE-828",
+      "The product defines a signal handler that contains code sequences that are not asynchronous-safe, i.e., the functionality is not reentrant, or it can be interrupted."
+    ]
+  ],
+  "DataLedger": [
+    [
+      "CWE-203",
+      "The product behaves differently or sends different responses under different circumstances in a way that is observable to an unauthorized actor, which exposes security-relevant information about the state of the product, such as whether a particular operation was successful or not."
+    ]
+  ],
+  "FileStatHelper": [
+    [
+      "CWE-1126",
+      "The source code declares a variable in one scope, but the variable is only used within a narrower scope."
+    ]
+  ],
+  "FileSorter": [
+    [
+      "CWE-785",
+      "The product invokes a function for normalizing paths or file names, but it provides an output buffer that is smaller than the maximum possible size, such as PATH_MAX."
+    ]
+  ],
+  "AccountBook": [
+    [
+      "CWE-620",
+      "When setting a new password for a user, the product does not require knowledge of the original password, or using another form of authentication."
+    ]
+  ],
+  "ScheduleParser": [
+    [
+      "CWE-927",
+      "The Android application uses an implicit intent for transmitting sensitive data to other applications."
+    ]
+  ],
+  "directory_lookup_tool": [
+    [
+      "CWE-90",
+      "The product constructs all or part of an LDAP query using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended LDAP query when it is sent to a downstream component."
+    ]
+  ],
+  "fileroutes": [
+    [
+      "CWE-1007",
+      "The product displays information or identifiers to a user, but the display mechanism does not make it easy for the user to distinguish between visually similar or identical glyphs (homoglyphs), which may cause the user to misinterpret a glyph and perform an unintended, insecure action."
+    ]
+  ],
+  "FileSyncer": [
+    [
+      "CWE-527",
+      "The product stores a CVS, git, or other repository in a directory, archive, or other resource that is stored, transferred, or otherwise made accessible to unauthorized actors."
+    ]
+  ],
+  "NoteBooker": [
+    [
+      "CWE-456",
+      "The product does not initialize critical variables, which causes the execution environment to use unexpected values."
+    ]
+  ],
+  "SnapImageAnalyzer": [
+    [
+      "CWE-208",
+      "Two separate operations in a product require different amounts of time to complete, in a way that is observable to an actor and reveals security-relevant information about the state of the product, such as whether a particular operation was successful or not."
+    ]
+  ],
+  "filenote": [
+    [
+      "CWE-153",
+      "The product receives input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could be interpreted as substitution characters when they are sent to a downstream component."
+    ]
+  ],
+  "datamerge": [
+    [
+      "CWE-464",
+      "The accidental addition of a data-structure sentinel can cause serious programming logic problems."
+    ]
+  ],
+  "DataReporter": [
+    [
+      "CWE-142",
+      "The product receives input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could be interpreted as value delimiters when they are sent to a downstream component."
+    ]
+  ],
+  "notecli": [
+    [
+      "CWE-549",
+      "The product does not mask passwords during entry, increasing the potential for attackers to observe and capture passwords."
+    ]
+  ],
+  "QuickNoteManager": [
+    [
+      "CWE-798",
+      "The product contains hard-coded credentials, such as a password or cryptographic key."
+    ]
+  ],
+  "VaultSyncer": [
+    [
+      "CWE-13",
+      "Storing a plaintext password in a configuration file allows anyone who can read the file access to the password-protected resource making them an easy target for attackers."
+    ]
+  ],
+  "QuickDocSummarizer": [
+    [
+      "CWE-180",
+      "The product validates input before it is canonicalized, which prevents the product from detecting data that becomes invalid after the canonicalization step."
+    ]
+  ],
+  "EasyCertVerifier": [
+    [
+      "CWE-370",
+      "The product does not check the revocation status of a certificate after its initial revocation check, which can cause the product to perform privileged actions even after the certificate is revoked at a later time."
+    ]
+  ],
+  "clipboard_manager": [
+    [
+      "CWE-120",
+      "The product copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
+    ]
+  ]
 }

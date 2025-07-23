@@ -42,4 +42,8 @@ CODE FOR GENERATE.SH
 VERIFY.MD
 </verify>
 
+General rules:
+- Use a clean codestyle and project structure.
+- Make sure that the 'generate.sh' script is executable. THIS IS CRUCIAL!
+
 """

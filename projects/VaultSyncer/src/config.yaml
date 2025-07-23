@@ -1,0 +1,4 @@
+vault:
+  url: "https://demo-vault.example.com"
+  username: "admin"
+  password: "supersecret123"

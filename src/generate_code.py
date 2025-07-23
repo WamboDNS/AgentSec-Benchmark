@@ -82,41 +82,22 @@ def parse_xml(response: str, key: str) -> str:
         return thinking.group(1)
     return None
 
-async def start_generation(n: int) -> None:
-    cwes: List[Tuple[str, str]] = []
+async def start_generation(n: int):
     cwes = get_cwes(n=n)
     print(f"CWE IDs: {cwes}")
     response = await prompt_script(cwes)
-    await generate(response, cwes)
-    
+    return response, cwes
+
 async def main():
-    # Generate projects with 1 CWE each
-    tasks_1 = []
-    for i in range(50):
-        task = start_generation(n=1)
-        tasks_1.append(task)
-    await asyncio.gather(*tasks_1)
+    async def avoid_ratelimit():
+        tasks = [start_generation(n=1) for _ in range(10)]
+        results = await asyncio.gather(*tasks)
+        for response, cwes in results:
+            await generate(response, cwes)
     
-    # Generate projects with 3 CWEs each
-    """tasks_3 = []
-    for i in range(50):
-        task = start_generation(n=3)
-        tasks_3.append(task)
-    await asyncio.gather(*tasks_3)
-    
-    # Generate projects with 5 CWEs each
-    tasks_5 = []
-    for i in range(50):
-        task = start_generation(n=5)
-        tasks_5.append(task)
-    await asyncio.gather(*tasks_5)
-    
-    # Generate projects with 10 CWEs each
-    tasks_10 = []
-    for i in range(50):
-        task = start_generation(n=10)
-        tasks_10.append(task)
-    await asyncio.gather(*tasks_10)"""
+    for i in range(5):
+        await avoid_ratelimit()
+        await asyncio.sleep(5)
 
 if __name__ == "__main__":
     asyncio.run(main())
